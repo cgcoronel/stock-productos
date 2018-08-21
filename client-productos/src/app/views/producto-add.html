@@ -1,0 +1,30 @@
+<div class="producto-box" *ngIf='producto'>
+
+	<h1>{{titleSection}}</h1>
+
+	<form #formFavorito="ngForm" (ngSubmit)="onSubmit()">
+		<label>Producto:</label>
+		<p>
+			<input type="text" name="title" #title="ngModel" [(ngModel)]="producto.title"
+			required >
+			<span *ngIf="title.touched && !title.valid">El titulo no es correcto</span>
+		</p>
+
+		<label>Descripción:</label>
+		<p>
+			<textarea type="text" name="description" #description="ngModel" [(ngModel)]="producto.description" required >
+			</textarea>
+			<span *ngIf="description.touched && !description.valid">La descripción no es correcta</span>
+		</p>
+
+		<label>Stock:</label>
+		<p>
+			<input type="text" name="stock" #stock="ngModel" [(ngModel)]="producto.stock" required >
+			<span *ngIf="stock.touched">Introduce una cantidad valida</span>
+		</p>
+
+		<input class="btn-add-producto" type="submit" value="Guardar">
+
+
+	</form>
+</div>

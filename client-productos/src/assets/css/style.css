@@ -1,0 +1,213 @@
+body{
+	font-family: Helvetica, Arial;
+}
+
+.clearfix{
+	float: none;
+	clear: both;
+	text-decoration: none;
+	list-style: none;
+}
+
+.busqueda{
+	float: right;
+	padding-right: 30px;
+}
+
+#content{
+	width: 80%;
+	min-height: 500px;
+	margin: 0px auto;
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px #ddd;
+	background: #eee;
+}
+
+header{
+	padding: 15px;
+	background: #1c0058;;
+}
+.title{
+	margin-left: 10px;
+	margin-right: 10px;
+	font-style: oblique;
+}
+header .title-subtitle{
+	float: left;
+	border-bottom: 10px solid white;
+	border-top: 10px solid white;
+	color: white;
+	padding: 20px;
+	margin-left: -75px;
+	padding-left: 65px;
+	width: 1150px;
+}
+
+ header h1, header p{
+	 margin: 0px;
+	 margin-left: 15px;
+}
+
+header h1 a {
+	text-decoration: none;
+	color: white;
+}
+
+header h1 a:hover {
+	text-decoration: underline;
+}
+
+header p {
+	color: #ddd;
+}
+
+header #logo{
+	width: 80px;
+	display: block;
+	float: left;
+}
+
+.btn-add-producto{
+		display: block;
+		padding: 10px;
+		float: right;
+		margin-right: 30px;
+		margin-top: 5px;
+		background: #eee;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+		box-shadow: 0px 0px 5px gray;
+		color: #666;
+		text-decoration: none;
+		transition: all 300ms;
+}
+
+
+.btn-sort{
+		display: block;
+		padding: 10px;
+		float: right;
+		margin-right: 30px;
+		margin-top: 5px;
+		background: #eee;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+		box-shadow: 0px 0px 5px gray;
+		color: #666;
+		text-decoration: none;
+		transition: all 300ms;
+}
+
+.btn-add-producto:hover {
+	background: white;
+	color #444;
+}
+
+#productos-list{
+	padding: 0px;
+	margin: 0px;
+}
+
+.producto-item{
+	list-style: none;
+	width: 98%;
+	float: left;
+	border: 1px solid #ddd;
+	height: 29px;
+	padding-top: 0px;
+	padding-bottom: 20px;
+	color: gray;
+	background: white;
+	margin: 5px;
+	margin-left: 10px;
+}
+
+.producto-item .content-data{
+	float: left;
+	margin-left: 20px;
+}
+
+.producto-item h4 {
+	color: #444;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 5px;
+
+}
+
+.producto-item .stock {
+	color: #444;
+	margin: 0px;
+	padding: 0px;
+	height: 45px;
+	overflow: hidden;
+	margin-top: 2px;
+	margin-right: 10px;
+}
+
+footer{
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 20px;
+	color: grey;
+}
+
+
+.btn {
+	font-size: 13px;
+	border: 1px solid #ccc;
+	border-color:#1976D2;
+	border-radius: 4px;
+	box-shadow: 0px  0px 5px #ddd;
+	padding: 5px;
+	text-decoration: none;
+	color: white;
+	background: #0074d9;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.btn-editar{
+	background: #0A0;
+	border-color: #59a600;
+}
+
+.btn-eliminar{
+	background: #E23237;
+	border-color: #F54747;
+}
+
+.btn-default{
+	background: #eaa615;
+	border-color: #cc941c;
+	color: white;
+	margin-left: 0px;
+}
+
+
+.producto-box{
+	margin-left: 25px;
+	background: white;
+	border: 1px solid #ddd;
+	width: 92%;
+	min-height: 150px;
+	margin-top: 20px;
+	padding: 20px;
+}
+
+.loading{
+	margin: 25px;
+}
+
+.seguro{
+	background: white none repeat scroll 0 0;
+	margin-top: -50px;
+	margin-left: -16px;
+	position: absolute;
+	width: 550px;
+	text-align: center;
+	height: 30px;
+	padding-top: 15px;
+}

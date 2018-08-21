@@ -1,0 +1,36 @@
+<div class="loading" *ngIf='loading'>
+	<img src="../../assets/images/loader.gif" alt="">
+</div>
+
+<ul id="productos-list" *ngIf='productos'>
+	<li *ngFor="let producto of productos" class="producto-item">
+	<div class="content-data">
+
+		<p class="buttons">
+			<a [routerLink]="['/producto', producto._id]" href="" class="btn btn-ver">
+				Ver
+			</a>
+			<a [routerLink]="['/editar-producto', producto._id]" class="btn btn-editar">
+				Editar
+			</a>
+
+			<a (click)="onBorrarConfirm(producto._id)" class="btn btn-eliminar">
+				Eliminar
+			</a>
+			<span class='title'>{{producto.title}}</span>
+			<span class="stock">Cantidad disponible: {{producto.stock}}</span>
+		</p>
+
+		<div class="seguro" *ngIf="confirmado == producto._id">
+
+			<strong>Estas seguro de querer borrar el Producto?</strong>
+			<a (click)="onBorrarProducto(producto._id)" class="btn btn-eliminar">
+				Eliminar
+			</a>
+			<a (click)="onCancelarConfirm(producto._id)" class="btn btn-ver">
+				Cancelar
+			</a>
+		</div>
+	</div>
+	</li>
+</ul>

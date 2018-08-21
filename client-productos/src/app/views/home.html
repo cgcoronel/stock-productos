@@ -1,0 +1,35 @@
+<header id="header">
+		<div class="title-subtitle">
+			<h1><a [routerLink]="['/']" >{{title}}</a></h1>
+			<p>{{description}}</p>
+
+			<div class="busqueda">
+				<h1>Buscar</h1>
+				<p>
+					<input type="text" name="search"  (input)="onChangeSearch($event.target.value)">
+				</p>
+			</div>
+
+			<a class="btn-add-producto" [routerLink]="['crear-producto']">
+				Nuevo
+			</a>
+			<a class="btn-add-producto" [routerLink]="['productos/asc/1']">
+				C/Stock
+			</a>
+			<a class="btn-add-producto" [routerLink]="['productos/asc/0']">
+				S/Stock
+			</a>
+			<a class="btn-add-producto" [routerLink]="['productos/asc/2']">
+				Todos
+			</a>
+			<a class="btn-sort" [routerLink]="['productos/asc/2']">^</a>
+			<a class="btn-sort" [routerLink]="['productos/des/2']">v</a>
+		</div>
+
+	<div class="clearfix"></div>
+</header>
+
+<section class="main">
+	<router-outlet></router-outlet>
+	<div class="clearfix"></div>
+</section>
