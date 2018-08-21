@@ -4,6 +4,10 @@ cd api-restful-productos
 
 iniciar mongo
 
+api-restful-productos# mkdir data/
+
+api-restful-productos# mkdir data/db/
+
 api-restful-productos# mongod --dbpath=data/db/
 
 ejecutar
