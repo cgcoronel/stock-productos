@@ -16,7 +16,7 @@ export class ProductosListComponent implements OnInit {
 	public productos: Producto[];
 	public errorMessage;
 	public confirmado;
-
+	
 	constructor(
 		private _route: ActivatedRoute,
 		private _productoService: ProductoService

@@ -19,28 +19,39 @@ function getProducto(req, res){
 		});
 }
 
+function searchProductos(req, res){
+  var sort = req.params.sort;
+  var search = req.params.search;
+
+  Producto.find({title: new RegExp(search,'i')  }).sort('-title')
+    .exec({}, (err, productos) => {
+			if (err) {
+				res.status(500).send({message: 'Error al devolver los Productos'});
+			} else {
+				if (!productos) {
+					res.status(404).send({message: 'No hay Productos'});
+				} else {
+					res.status(200).send({productos});
+				}
+			}
+	});
+}
+
 function getProductos(req, res){
   var sort = req.params.sort;
   var stock = req.params.stock;
-  var search = req.params.search;
 
   if (sort == 'asc')
     sort = '+stock';
   else
     sort= '-stock';
 
-  if (req.url.indexOf('/productos-search') >= 0) {
-    var find = Producto.find({title: new RegExp(search,'i')  }).sort(sort);
-  }
-  else {
     if (stock == 1)
       var find = Producto.find({stock:  { $ne: '0' } }).sort(sort);
     else if (stock == 0)
       var find = Producto.find({stock: 0}).sort(sort);
     else
       var find = Producto.find({}).sort(sort);
-  }
-
 
   find.exec({}, (err, productos) => {
 			if (err) {
@@ -81,8 +92,6 @@ function updateProducto(req, res){
 	var productoId = req.params.id;
   var update = req.body;
 
-	console.log(update);
-
 	Producto.findByIdAndUpdate(productoId, update, (err, productoUpdated) => {
 		if (err) {
 			res.status(500).send({message: 'Error al guardar el Producto'});
@@ -116,6 +125,7 @@ function deleteProducto(req, res){
 
 module.exports = {
   getProducto,
+  searchProductos,
   getProductos,
   saveProducto,
   updateProducto,

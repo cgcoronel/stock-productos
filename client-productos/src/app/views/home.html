@@ -6,7 +6,7 @@
 			<div class="busqueda">
 				<h1>Buscar</h1>
 				<p>
-					<input type="text" name="search"  (input)="onChangeSearch($event.target.value)">
+					<input type="text" class="search" name="search"  (input)="onChangeSearch($event.target.value)">
 				</p>
 			</div>
 
@@ -14,10 +14,10 @@
 				Nuevo
 			</a>
 			<a class="btn-add-producto" [routerLink]="['productos/asc/1']">
-				C/Stock
+				Con Stock
 			</a>
 			<a class="btn-add-producto" [routerLink]="['productos/asc/0']">
-				S/Stock
+				Sin Stock
 			</a>
 			<a class="btn-add-producto" [routerLink]="['productos/asc/2']">
 				Todos
