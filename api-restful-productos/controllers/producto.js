@@ -20,7 +20,6 @@ function getProducto(req, res){
 }
 
 function searchProductos(req, res){
-  var sort = req.params.sort;
   var search = req.params.search;
 
   Producto.find({title: new RegExp(search,'i')  }).sort('-title')
@@ -42,16 +41,16 @@ function getProductos(req, res){
   var stock = req.params.stock;
 
   if (sort == 'asc')
-    sort = '+stock';
+    sort = 1;
   else
-    sort= '-stock';
+    sort= -1;
 
     if (stock == 1)
-      var find = Producto.find({stock:  { $ne: '0' } }).sort(sort);
+      var find = Producto.find({stock:  { $ne: '0' } }).sort([['stock', sort]]);
     else if (stock == 0)
-      var find = Producto.find({stock: 0}).sort(sort);
+      var find = Producto.find({stock: 0}).sort([['stock', sort]]);
     else
-      var find = Producto.find({}).sort(sort);
+      var find = Producto.find({}).sort([['stock', sort]]);
 
   find.exec({}, (err, productos) => {
 			if (err) {
