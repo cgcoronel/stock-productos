@@ -1,4 +1,5 @@
 <header id="header">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<div class="title-subtitle">
 			<h1><a [routerLink]="['/']" >{{title}}</a></h1>
 			<p>{{description}}</p>
@@ -10,20 +11,20 @@
 				</p>
 			</div>
 
-			<a class="btn-add-producto" [routerLink]="['crear-producto']">
+			<a class="btn btn-primary" [routerLink]="['crear-producto']">
 				Nuevo
 			</a>
-			<a class="btn-add-producto" [routerLink]="['productos/asc/1']">
+			<a class="btn btn-success" [routerLink]="['productos/asc/1']">
 				Con Stock
 			</a>
-			<a class="btn-add-producto" [routerLink]="['productos/asc/0']">
+			<a class="btn btn-success" [routerLink]="['productos/asc/0']">
 				Sin Stock
 			</a>
-			<a class="btn-add-producto" [routerLink]="['productos/asc/2']">
+			<a class="btn btn-info" [routerLink]="['productos/asc/2']">
 				Todos
 			</a>
-			<a class="btn-sort" [routerLink]="['productos/asc/2']">^</a>
-			<a class="btn-sort" [routerLink]="['productos/des/2']">v</a>
+			<a class="btn btn-success" [routerLink]="['productos/asc/2']">^</a>
+			<a class="btn btn-success" [routerLink]="['productos/des/2']">v</a>
 		</div>
 
 	<div class="clearfix"></div>

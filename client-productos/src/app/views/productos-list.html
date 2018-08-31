@@ -7,14 +7,14 @@
 	<div class="content-data">
 
 		<p class="buttons">
-			<a [routerLink]="['/producto', producto._id]" href="" class="btn btn-ver">
+			<a [routerLink]="['/producto', producto._id]" href="" class="btn btn-primary">
 				Ver
 			</a>
-			<a [routerLink]="['/editar-producto', producto._id]" class="btn btn-editar">
+			<a [routerLink]="['/editar-producto', producto._id]" class="btn btn-success">
 				Editar
 			</a>
 
-			<a (click)="onBorrarConfirm(producto._id)" class="btn btn-eliminar">
+			<a (click)="onBorrarConfirm(producto._id)" class="btn btn-danger">
 				Eliminar
 			</a>
 			<span class='title'>{{producto.title}}</span>
@@ -24,10 +24,10 @@
 		<div class="seguro" *ngIf="confirmado == producto._id">
 
 			<strong>Estas seguro de querer borrar el Producto?</strong>
-			<a (click)="onBorrarProducto(producto._id)" class="btn btn-eliminar">
+			<a (click)="onBorrarProducto(producto._id)" class="btn btn-danger">
 				Eliminar
 			</a>
-			<a (click)="onCancelarConfirm(producto._id)" class="btn btn-ver">
+			<a (click)="onCancelarConfirm(producto._id)" class="btn btn-primary">
 				Cancelar
 			</a>
 		</div>
