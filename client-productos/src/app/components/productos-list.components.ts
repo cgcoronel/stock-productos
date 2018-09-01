@@ -16,13 +16,19 @@ export class ProductosListComponent implements OnInit {
 	public productos: Producto[];
 	public errorMessage;
 	public confirmado;
-	
+	public sort: string;
+	public stock: string;
+	public search: string;
+
 	constructor(
 		private _route: ActivatedRoute,
 		private _productoService: ProductoService
 	){
 		this.title = 'Listado de Productos';
 		this.loading = true;
+		this.sort = 'asc';
+		this.stock = '1';
+		this.search = '';
 	}
 
  ngOnInit(){
@@ -30,35 +36,23 @@ export class ProductosListComponent implements OnInit {
 	this.getProductos();
  }
 
- getProductos(){
+ getProductos(){	 
 	 this._route.params.forEach(
 	 	(params: Params) => {
-		 if (params['search']) {
-			 var search = params['search'];
 
-  	 	 this._productoService.searchProductos(search).subscribe(
-    		result => {
-    			this.productos = result.productos;
+			if (params['sort'] != undefined) {
+					this.sort = params['sort'];
+			}
 
-    			if (!this.productos) {
-    				alert('Error en el servidor');
-    			} else {
-    				this.loading = false;
-    			}
-    		},
-    		error  => {
-    			this.errorMessage = <any>error;
+			if (params['stock'] != undefined) {
+					this.stock = params['stock'];
+			}
 
-    			if (this.errorMessage != null) {
-    			    console.log(this.errorMessage);
-    					alert('Error en la peticion');
-    			}
-    		});
-		 } else {
-			 var sort = params['sort'];
-			 var stock = params['stock'];
+			if (params['search'] != undefined) {
+					this.search = params['search'];
+			}
 
-		 	 this._productoService.getProductos(sort, stock).subscribe(
+		 	 this._productoService.getProductos(this.sort, this.stock, this.search).subscribe(
 	  		result => {
 	  			this.productos = result.productos;
 
@@ -76,7 +70,6 @@ export class ProductosListComponent implements OnInit {
 	  					alert('Error en la peticion');
 	  			}
 	  		});
-		 }
 		});
  }
 

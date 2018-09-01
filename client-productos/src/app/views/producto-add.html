@@ -5,8 +5,7 @@
 	<form #formFavorito="ngForm" (ngSubmit)="onSubmit()">
 		<label>Producto:</label>
 		<p>
-			<input type="text" name="title" #title="ngModel" [(ngModel)]="producto.title"
-			required >			
+			<input type="text" name="title" #title="ngModel" [(ngModel)]="producto.title" required >			
 		</p>
 
 		<label>Descripción:</label>

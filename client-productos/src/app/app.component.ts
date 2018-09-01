@@ -8,7 +8,10 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class AppComponent {
   public title: string;
   public description: string;
-  //public search: string;
+  public sort: string;
+  public search: string;
+  public stock: string;
+
 
   constructor(
     private _route: ActivatedRoute,
@@ -16,11 +19,33 @@ export class AppComponent {
   ){
     this.title = 'Catalogo de Productos';
     this.description = 'Control de stock';
+    this.sort = 'asc';
+    this.stock = '1';
+    this.search = null;
   }
 
-  onChangeSearch(search){    
-    this._router.navigate(['productos-search/' + search]);
+  onChangeSearch(search){
+    this.search = search;
+    this.getProductos();
   }
 
+  setSort(sort:string){
+    this.sort = sort;
+    this.getProductos();
+  }
 
+  setStock(stock:string){
+    this.stock = stock;
+    this.getProductos();
+  }
+
+  getProductos(){
+    var params = this.sort + '/' + this.stock;
+
+    if (this.search != null && this.search!='') {
+        params +=  '/' + this.search;
+    }
+
+    this._router.navigate(['productos/' + params]);
+  }
 }

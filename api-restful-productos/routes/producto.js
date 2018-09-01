@@ -5,8 +5,7 @@ var ProductoController = require('../controllers/producto');
 var api = express.Router();
 
 api.get('/producto/:id', ProductoController.getProducto);
-api.get('/productos/:sort/:stock', ProductoController.getProductos);
-api.get('/productos-search/:search', ProductoController.searchProductos);
+api.get('/productos/:sort/:stock/:search*?', ProductoController.getProductos);
 api.post('/producto', ProductoController.saveProducto);
 api.put('/producto/:id', ProductoController.updateProducto);
 api.delete('/producto/:id', ProductoController.deleteProducto);

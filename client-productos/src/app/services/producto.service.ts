@@ -11,16 +11,9 @@ export class ProductoService{
 		this.url = 'http://localhost:3678/api/';
 	}
 
-	searchProductos(search: string){
-		console.log(search);
-		return this._http.get(this.url+'productos-search/' + search)
-										 .map(res => res.json());
-	}
-
-	getProductos(sort: string, stock: string){
-
-		return this._http.get(this.url+'productos/' + sort + '/' +  stock)
-										 .map(res => res.json());
+	getProductos(sort: string, stock: string, search: string){
+			return this._http.get(this.url+'productos/' + sort + '/' + stock + '/' + search)
+											 .map(res => res.json());
 	}
 
 	getProducto(id: string){
