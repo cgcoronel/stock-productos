@@ -1,6 +1,9 @@
 
 MEAN Stack - CRUD 
 
+<img src='https://raw.githubusercontent.com/thesequencer/stock-productos/master/demo1.png' />
+
+
 cd api-restful-productos
 
 iniciar mongo
